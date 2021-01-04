@@ -1,0 +1,11 @@
+#include <stdio.h>
+#include <string.h>
+
+int main(void) {
+  char a[20];
+  strcpy(a, "강한친구 대한육군");
+  printf("%s\n", a);
+  printf("%s", a);
+
+  return 0;
+}
