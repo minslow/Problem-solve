@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <string.h>
+
+/*
+1. 테스트 케이스의 수를 받는다.
+2. 몇명의 학생인지 값을 받는다.
+3. 각 학생의 점수를 입력받고 total에 저장
+4. 평균을 구해낸다: total/학생수
+5. 평균을 넘는 학생의 수를 반복문을 이용해 구함
+6. 평균을 넘는 학생의 비율 = (평균 이상 학생 수)/(전체 학생)*100
+*/
+
+int main(void) {
+  int n, num, count=0;
+  double total=0;
+  double avg;
+  
+  scanf("%d", &n);
+
+  for(int i=0; i<n; i++){
+    scanf("%d", &num);
+
+    int score[num];
+
+    for(int k=0; k<num; k++){
+      scanf("%d", &score[k]);
+
+      total += score[k];
+    }
+
+    avg = total/num;
+
+    for(int k=0; k<num; k++){
+      if(score[k] > avg){
+        count += 1;
+      }
+    }
+
+    printf("%.3lf%%\n", (count*1.0)/num*100);
+
+    count =0;
+    total =0;
+  }
+
+  return 0;
+}

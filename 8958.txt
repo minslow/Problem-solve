@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <string.h>
+
+int main(void) {
+  int n;
+  char result[80];
+  int total=0;
+  int score =0;
+  
+  scanf("%d", &n);
+
+  for(int i=0; i<n; i++){
+    scanf("%s", result);
+
+    for(int k=0; k<strlen(result); k++){
+      if(result[k] == 'O'){
+        score += 1;
+      }else if(result[k] == 'X'){
+        score = 0;
+      }
+
+      total += score;
+    }
+
+    printf("%d\n", total);
+    score = 0;
+    total =0;
+  }
+
+  return 0;
+}
