@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main(void) {
+  int a, b;
+  int count=0;
+  int o, t;
+
+  scanf("%d", &a);
+  b = a;
+
+  while(1){
+    o = b%10;
+    t = (b%10 + b/10)%10;
+    b = (o*10)+t;
+    count += 1;
+
+    if(a==b){
+      break;
+    }
+  }
+
+  printf("%d\n", count);
+
+  return 0;
+}
