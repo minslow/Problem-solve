@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+
+int main(void) {
+  int T;
+  int r;
+  char mun[20];
+
+  scanf("%d", &T);
+
+  for(int i=0; i<T; i++){
+    scanf("%d %s", &r, mun);
+
+    for(int k=0; k < strlen(mun); k++){
+      for(int j=0; j<r; j++){
+        printf("%c", mun[k]);
+      }
+    }
+    printf("\n");
+  }
+}

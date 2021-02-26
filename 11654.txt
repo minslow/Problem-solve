@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int dng(int a);
+
+int main(void) {
+  char mun;
+
+  scanf("%c", &mun);
+
+  printf("%d", mun);
+
+  return 0;
+}
