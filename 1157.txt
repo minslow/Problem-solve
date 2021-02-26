@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <string.h>
+
+/*
+1. 문자열을 입력받음
+2. 문자들을 다 대문자로 변환
+3. 각각의 알파벳에 해당하는 배열을 만들어 놓음
+4. 문자를 하나씩 검사하면서 해당하는 문자 배열을 카운트
+5. 최대를 구함
+  - 최대와 중복이 있으면 중복 변수를 0->1
+  - 최대값이 갱신되면 중복 변수를 0으로 초기화
+*/
+
+int main(void) {
+  char mun[1000000];
+  int alpha[26] = {0};
+  int len;
+  int max =0;
+  int maxA=0;
+  int re =0;
+
+  scanf("%s", mun);
+
+  len = strlen(mun);
+
+  for(int i=0; i<len; i++){
+    if(mun[i]>='a' && mun[i]<= 'z'){
+      mun[i] += 'A'-'a';
+    }
+  }
+
+  for(int i=0; i<len; i++){
+    alpha[mun[i] - 'A'] += 1;
+  }
+
+  for(int i=0; i<26; i++){
+    if(max < alpha[i]){
+      max = alpha[i];
+      maxA = i;
+      re = 0;
+    }else if(max == alpha[i]){
+      re = 1;
+    }
+  }
+
+  if(re != 1){
+    printf("%c", 'A'+maxA);
+  }else{
+    printf("?");
+  }
+}
